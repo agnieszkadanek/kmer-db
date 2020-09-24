@@ -74,7 +74,7 @@ kmer-db: $(OBJS) $(AVX_OBJS)
 	$(CC) $(CLINK) -o $(KMER_DB_ROOT_DIR)/$@ $(OBJS) $(AVX_OBJS) $(EXTRA_LIBS_DIR)/libz.a
 else
 kmer-db: $(OBJS) $(AVX_OBJS)
-	$(CC) $(CLINK) -o $(KMER_DB_ROOT_DIR)/$@ $(OBJS) $(AVX_OBJS) -lz
+	$(CC) -lz $(CLINK) -o $(KMER_DB_ROOT_DIR)/$@ $(OBJS) $(AVX_OBJS)
 endif	
 
 clean:
